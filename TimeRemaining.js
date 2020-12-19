@@ -4,18 +4,27 @@ function timeManager(time, idtimer, cseconds, cminutes, chours) {
     // Github, Instagram, Telegram - @thestrikem
 
     // Get time remaining, return seconds, minutes, hours and total
-    function getRemaining(endtime) {
-        let t = Date.parse(endtime) - Date.parse(new Date()),
-            seconds = Math.floor((t/1000) % 60),
-            minutes = Math.floor((t/1000/60) % 60),
-            hours = Math.floor((t/1000/60/60) % 60);
-
-        return {
-            'total': t,
-            'seconds': seconds,
-            'minutes': minutes,
-            'hours': hours
-        };
+	function getRemaining(endtime) {
+        if (Date.parse(endtime) < Date.parse(new Date())) {
+            return {
+                'total': "00",
+                'seconds': "00",
+                'minutes': "00",
+                'hours': "00"
+            }
+        } else {
+            let t = Date.parse(endtime) - Date.parse(new Date()),
+                seconds = Math.floor((t/1000) % 60),
+                minutes = Math.floor((t/1000/60) % 60),
+                hours = Math.floor((t/1000/60/60) % 60);
+        
+            return {
+                'total': t,
+                'seconds': seconds,
+                'minutes': minutes,
+                'hours': hours
+            };
+        }
     }
 
     // Set time remaining to element by id and elements by class name
