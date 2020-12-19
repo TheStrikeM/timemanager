@@ -1,8 +1,8 @@
 # timemanager
 Best time remaining manager, every update
 
-# Usage
-## timeManager(time, idtimer, cseconds, cminutes, chours);
+### Usage
+#### timeManager(time, idtimer, cseconds, cminutes, chours);
 
 + time = Time until which to count
 + idtimer = CSS Element ID timer
